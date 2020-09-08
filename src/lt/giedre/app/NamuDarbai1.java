@@ -1,8 +1,5 @@
 package lt.giedre.app;
 
-import java.math.BigInteger;
-
-
 public class NamuDarbai1 {
     public static void main(String[] args) {
         // 1. Int kintamojo min ir max reiksmes
@@ -15,7 +12,7 @@ public class NamuDarbai1 {
         // b) Lt asmens kodas
         Long AsmKodas = 40005020622L;
         System.out.println(AsmKodas);
-        // 2. prie maximalios int reikšmės pridėkime 1. This is called overflow.
+        // 2. prie maximalios int reikšmės + 1. This is called overflow.
         System.out.println(Integer.MAX_VALUE + 1);
         System.out.println("----------");
 
@@ -27,9 +24,9 @@ public class NamuDarbai1 {
         // 3.
         int x = 10;
         int y = 5;
-        System.out.println(x == 10 && y <= 5); // kas bus išspausdinta?
-        System.out.println(x <= y && y > 5); // kas bus išspausdinta?
-        System.out.println("abc" instanceof String); // kas bus išspausdinta? true
+        System.out.println(x == 10 && y <= 5); // true
+        System.out.println(x <= y && y > 5); // false
+        System.out.println("abc" instanceof String); //  true
         System.out.println("-------");
 
         // stringai
@@ -42,11 +39,6 @@ public class NamuDarbai1 {
         String newLorem = lorem.replace("o", "z");
         System.out.println(newLorem);
         System.out.println(lorem.endsWith("elit"));
-        if(lorem.endsWith("elit")) {
-            System.out.println("Stringas baigiasi zodziu. Ka tai reiskia?");
-        }
-
-
 
     }
 }
