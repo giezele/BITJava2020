@@ -28,10 +28,10 @@ public class NDArrays {
         System.out.println("Įveskite pageidaujamą masyvo dydį: ");
         int arrDydis = sc.nextInt(); sc.nextLine();
         int[] Arr2 = new int[arrDydis];
-        Random rd = new Random(); // creating Random object
+        Random rand = new Random();
         System.out.println("1) for");
         for (int i = 0; i < Arr2.length; i++) {
-            Arr2[i] = rd.nextInt(); // storing random integers in an array
+            Arr2[i] = rand.nextInt((100 - 1) + 1) + 1;
             System.out.println(Arr2[i]);
         }
         System.out.println("2) enchanced for");
@@ -70,13 +70,13 @@ public class NDArrays {
         System.out.println("Prieš rikiavimą: " + Arrays.toString(Arr3));
         int counterIter = 0;
         int counterSwap = 0;
-        for (int y = 0; y < Arr3.length - 1; y++) {
-            for(int z = 0; z < Arr3.length - 1; z++){  //cia iter
+        for (int i = 0; i < Arr3.length - 1; i++) {
+            for(int j = 0; j < Arr3.length -i - 1; j++){  //cia iter
                 counterIter++;
-                if(Arr3[z] > Arr3[z + 1]){       //cia swapina
-                    int temporary = Arr3[z + 1];
-                    Arr3[z + 1] = Arr3[z];
-                    Arr3[z] = temporary;
+                if(Arr3[j] > Arr3[j + 1]){       //cia swapina
+                    int temporary = Arr3[j + 1];
+                    Arr3[j + 1] = Arr3[j];
+                    Arr3[j] = temporary;
                     counterSwap++;
                 }
             }
@@ -85,10 +85,20 @@ public class NDArrays {
         System.out.println("Iteracijos: " + counterIter);
         System.out.println("Sukeitimai: " + counterSwap);
 
-
-
-
-
-
+        System.out.println("7. Insertion sort");
+        System.out.println("Prieš rikiavimą: " + Arrays.toString(Arr2));
+        int n = Arr2.length;
+        for (int i = 1; i < n; ++i) {
+            int key = Arr2[i];
+            int j = i - 1;
+            while (j >= 0 && Arr2[j] > key) {
+                Arr2[j + 1] = Arr2[j];
+                j = j - 1;
+            }
+            Arr2[j + 1] = key;
+        }
+        System.out.println("Po rikiavimo: " + Arrays.toString(Arr2));
     }
+
 }
+
