@@ -22,16 +22,14 @@ public class NDFunctions {
         int minValueInArray = findMin(Arr1);
         System.out.println("Elementas min:"+minValueInArray);
 
-
         //kvieciam f-cija rasti max
         int maxValueInArray = findMax(Arr1);
         System.out.println("Elementas max:"+maxValueInArray);
-        System.out.println("Masyvas:" + Arrays.toString(Arr1));
-
 
         // //kvieciam f-cija rasti sumai
-        // int sumValuesInArray = sumValues(Arr1);
-        // System.out.println("Elementų suma:"+sumValuesInArray);
+        int sumValuesInArray = sumValues(Arr1);
+        System.out.println("Elementų suma:"+sumValuesInArray);
+
 
         //kvieciam f-cija sortinimui
         String sortedValuesInArray = sortValues(Arr1);
@@ -39,7 +37,7 @@ public class NDFunctions {
     }
 
     public static int findMin(int[] Arr1) {
-        int min = 1000;
+        int min = 10000;
         for (int i = 0; i < Arr1.length; i++) {
             if (Arr1[i] <= min) {
                 min = Arr1[i];
@@ -66,8 +64,6 @@ public class NDFunctions {
         return sum;
     }
     public static String sortValues(int[] Arr1) {
-
-
         for (int i = 0; i < Arr1.length - 1; i++) {
             for(int j = 0; j < Arr1.length -i - 1; j++){
                 if(Arr1[j] > Arr1[j + 1]){
